@@ -27,7 +27,7 @@ import javax.crypto.Cipher;
 public class WinnerLook {
 
     private static final String userCode = "HCWLYX";
-    private static final String userPass = "HCWLyx0826";
+    private static final String userPass = "HCWLyx08262323";
 
     public static void main(String[] args) {
         System.out.println(Runtime.getRuntime().availableProcessors());
