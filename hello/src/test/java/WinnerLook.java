@@ -1,9 +1,7 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
 import java.security.MessageDigest;
+
 import org.apache.http.*;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -17,6 +15,14 @@ import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.Cipher;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.DocumentHelper;
+import org.dom4j.Element;
 
 /**
  * @author ZhouSs
@@ -27,12 +33,16 @@ import javax.crypto.Cipher;
 public class WinnerLook {
 
     private static final String userCode = "HCWLYX";
-    private static final String userPass = "HCWLyx08262323";
+    private static final String userPass = "HCWLyx0826";
 
     public static void main(String[] args) {
-        System.out.println(Runtime.getRuntime().availableProcessors());
+//        System.out.println(Runtime.getRuntime().availableProcessors());
 
-        getReport();
+        try {
+            getReport();
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -43,7 +53,7 @@ public class WinnerLook {
 
         String desNo = "13520737357";
         String channel = "52";
-        String encryptStr = DESEncrypt("userPass="+ userPass+"&DesNo="+desNo+"&Msg="+msg+sign+"&Channel="+channel,userPass);
+        String encryptStr = DESEncrypt("userPass=" + userPass + "&DesNo=" + desNo + "&Msg=" + msg + sign + "&Channel=" + channel, userPass);
 
         List<NameValuePair> nvps = new ArrayList<NameValuePair>();
         nvps.add(new BasicNameValuePair("userCode", userCode));
@@ -51,32 +61,61 @@ public class WinnerLook {
 
 
         String post = httpPost(url, nvps);  //post请求
-        System.out.println("发送结果:"+post);
+        System.out.println("发送结果:" + post);
+
         //        String getparam = "userCode=用户名&submitInfo=" + encryptStr;
 //        String result = httpGet(url, getparam); //get请求
 //        System.out.println("发送结果:"+result);
+        boolean result = parseResponse(post);
+        System.out.println("发送结果:" + result);
     }
 
-    public static void getReport() {
-        String url="http://112.124.24.5/api/MsgSend.asmx/GetReport2ByEncrypt";
+    public static void getReport() throws JAXBException {
+        String url = "http://112.124.24.5/api/MsgSend.asmx/GetReport2ByEncrypt";
 
-        String encryptStr=DESEncrypt("userPass=" + userPass,userPass);
-
+        String encryptStr = DESEncrypt("userPass=" + userPass, userPass);
+        System.out.println(encryptStr);
         List<NameValuePair> nvps = new ArrayList<NameValuePair>();
         nvps.add(new BasicNameValuePair("userCode", userCode));
-        nvps.add(new BasicNameValuePair("submitInfo",encryptStr));
-        String post = httpPost(url,nvps);  //post请求
-        System.out.println("报告:" + post);
+        nvps.add(new BasicNameValuePair("submitInfo", encryptStr));
+        String post = httpPost(url, nvps);  //post请求
+        System.out.println("报告:");
+        System.out.println(post);
+
         //        String getparam="userCode=用户名&submitInfo="+encryptStr;
 //        String result=httpGet(url,getparam); //get请求
 
     }
 
+    public static boolean parseResponse(String str) {
+        Document doc = null;
+        try {
+            doc = DocumentHelper.parseText(str); // 将字符串转为XML
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
+
+        if (doc == null) return false;
+        Element rootElt = doc.getRootElement(); // 获取根节点
+        if (rootElt == null) return false;
+        //System.out.println("根节点：" + rootElt.getName()); // 拿到根节点的名称
+        System.out.println("根节点的值：" + rootElt.getText()); // 拿到根节点的名称
+        if (rootElt.getText() == null || "".equals(rootElt.getText())) return false;
+        if (Integer.parseInt(rootElt.getText()) > 0) {
+            if (Integer.parseInt(rootElt.getText()) > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
     public static String DESEncrypt(String encryptStr, String key) {
         String result = "";
         try {
-            System.out.println("dddd :"+SHA1(key));
-            System.out.println("dddd :"+SHA1(key));
+//            System.out.println("dddd :"+SHA1(key));
+//            System.out.println("dddd :"+SHA1(key));
             String encryptKey = SHA1(key).substring(0, 8).toUpperCase();
 
             DESKeySpec desKeySpec = new DESKeySpec(encryptKey.getBytes());
@@ -137,7 +176,7 @@ public class WinnerLook {
             if (entity != null) {
                 InputStream instreams = entity.getContent();
                 result = convertStreamToString(instreams);
-                System.out.println(result);
+//                System.out.println(result);
             }
         } catch (Exception e) {
         }

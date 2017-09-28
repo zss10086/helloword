@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<hotel id="1">
+	<name>name1</name>
+	<RoomTypeVOs>
+		<RoomTypeVO typeid="1">
+			<price>20</price>
+			<typename>typename1</typename>
+		</RoomTypeVO>
+		<RoomTypeVO typeid="2">
+			<price>30</price>
+			<typename>typename2</typename>
+		</RoomTypeVO>
+	</RoomTypeVOs>
+</hotel>
