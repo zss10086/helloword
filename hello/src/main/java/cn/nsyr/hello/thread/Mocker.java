@@ -1,6 +1,8 @@
 package cn.nsyr.hello.thread;
 
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author ZhouSs
@@ -20,5 +22,8 @@ public class Mocker<T extends Exception> {
 //        } catch (SQLException ex) {
 //            ex.printStackTrace();
 //        }
+
+
     }
+
 }

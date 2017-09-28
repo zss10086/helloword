@@ -37,7 +37,8 @@ public class ApiController {
 
         Long userId = null;
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File(path)))) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(new File(path)));
             String lnContent = null;
             while ((lnContent = reader.readLine()) != null) {
 //                log.info("#doLock# Scanned line:{}", lnContent);
@@ -58,7 +59,8 @@ public class ApiController {
 
         String lnContent = null;
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File(path)))) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(new File(path)));
             while ((lnContent = reader.readLine()) != null) {
                 if (StringUtils.isEmpty(lnContent))
                     break;
