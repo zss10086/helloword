@@ -48,7 +48,7 @@ public class WinnerLook {
 
     public static void sendMsg() {
         String url = "http://112.124.24.5/api/MsgSend.asmx/sendMsgByEncrypt";
-        String sign = "【优分期】";
+        String sign = "【吃串串】";
         String msg = "嗨,大家下午好,该吃饭了,请抓紧时间订餐!";
 
         String desNo = "13520737357";
