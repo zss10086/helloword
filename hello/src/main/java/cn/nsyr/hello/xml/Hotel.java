@@ -7,8 +7,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 /**
- * @author ZhouSs
- * @Mail: zhoushengshuai@ufenqi.com
+ * @author javarice
+ * @Mail: zss10086@126.com
  * @date:2017/9/28 下午5:04
  * @version: 1.0
  **/

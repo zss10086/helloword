@@ -15,8 +15,8 @@ import javax.xml.namespace.QName;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * @author ZhouSs
- * @Mail: zhoushengshuai@ufenqi.com
+ *@author javarice
+ * @Mail: zss10086@126.com
  * @date:2017/9/28 下午5:06
  * @version: 1.0
  **/

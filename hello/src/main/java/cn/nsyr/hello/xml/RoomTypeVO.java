@@ -4,8 +4,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
 /**
- * @author ZhouSs
- * @Mail: zhoushengshuai@ufenqi.com
+ * @author javarice
+ * @Mail: zss10086@126.com
  * @date:2017/9/28 下午5:05
  * @version: 1.0
  **/

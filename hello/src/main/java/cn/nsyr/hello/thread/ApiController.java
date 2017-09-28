@@ -16,8 +16,8 @@ import java.util.concurrent.Executors;
 
 
 /**
- * @author ZhouSs
- * @Mail: zhoushengshuai@ufenqi.com
+ * @author javarice
+ * @Mail: zss10086@126.com
  * @date:2017/3/23 下午2:41
  * @version: 1.0
  **/

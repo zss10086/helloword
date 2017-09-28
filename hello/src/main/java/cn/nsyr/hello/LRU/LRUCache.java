@@ -3,8 +3,8 @@ package cn.nsyr.hello.LRU;
 import java.util.*;
 
 /**
- * @author ZhouSs
- * @Mail: zhoushengshuai@ufenqi.com
+ * @author javarice
+ * @Mail: zss10086@126.com
  * @date:2017/3/16 下午2:54
  * @version: 1.0
  **/

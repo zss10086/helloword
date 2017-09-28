@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author ZhouSs
- * @Mail: zhoushengshuai@ufenqi.com
+ * @author javarice
+ * @Mail: zss10086@126.com
  * @date:2017/9/28 下午5:09
  * @version: 1.0
  **/

@@ -25,8 +25,8 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 
 /**
- * @author ZhouSs
- * @Mail: zhoushengshuai@ufenqi.com
+ * @author javarice
+ * @Mail: zss10086@126.com
  * @date:2017/9/28 下午3:30
  * @version: 1.0
  **/

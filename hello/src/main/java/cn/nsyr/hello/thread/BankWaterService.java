@@ -4,8 +4,8 @@ import java.util.Map;
 import java.util.concurrent.*;
 
 /**
- * @author ZhouSs
- * @Mail: zhoushengshuai@ufenqi.com
+ * @author javarice
+ * @Mail: zss10086@126.com
  * @date:2017/9/28 上午9:50
  * @version: 1.0
  **/

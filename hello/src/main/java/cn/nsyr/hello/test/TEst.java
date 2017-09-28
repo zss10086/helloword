@@ -7,8 +7,8 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author ZhouSs
- * @Mail: zhoushengshuai@ufenqi.com
+ * @author javarice
+ * @Mail: zss10086@126.com
  * @date:2017/4/10 下午3:50
  * @version: 1.0
  **/
