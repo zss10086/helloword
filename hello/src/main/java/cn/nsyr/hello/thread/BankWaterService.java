@@ -35,6 +35,7 @@ public class BankWaterService implements Runnable {
         sheetBankWaterCount.put("result",result);
 
         System.out.println("计算结果:"+result);
+
         System.out.println(c.getNumberWaiting());
 
     }
